@@ -1,3 +1,22 @@
+function menu() {
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuTrigger = document.querySelector(".menu-trigger");
+    const menu = document.querySelector(".menu");
+    const menuItems = document.querySelectorAll(".menu li a");
+
+    menuTrigger.addEventListener("click", function () {
+      menu.classList.toggle("open");
+    });
+
+    menuItems.forEach(function (item) {
+      item.addEventListener("click", function () {
+        menu.classList.remove("open");
+      });
+    });
+  });
+}
+menu();
+
 $(document).ready(function () {
   $(".slider").slick({
     slidesToShow: 1,
